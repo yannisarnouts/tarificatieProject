@@ -1,0 +1,50 @@
+<p>rente-tool works!</p>
+<!--<ul>-->
+  <!--<li *ngFor="let client of clients">-->
+    <!--{{client.name}}-->
+  <!--</li>-->
+<!--</ul>-->
+<form [formGroup]="renteForm">
+<div class="form-group">
+  <label>Naam A:</label>
+  <input type="text" formControlName="nameA">
+</div>
+<div class="form-group">
+  <label>Naam B:</label>
+  <input type="text" formControlName="nameB">
+</div>
+  <div class="form-group">
+    <label>Totale prijs aankoop:</label>
+    <input type="number" formControlName="totalPrice">
+  </div>
+<div class="form-group">
+  <label>Lening:</label>
+  <input type="number" formControlName="loan">
+</div>
+<div class="form-group">
+  <label>Totaal salaris:</label>
+  <input type="number" formControlName="totalSalary">
+</div>
+<div class="form-group">
+  <label>Maandelijkse aflossing:</label>
+  <input type="number" formControlName="monthlyRedemption">
+</div>
+<div class="form-group">
+  <label>Type lening:</label>
+  <input type="text" formControlName="typeOfLoan">
+</div>
+  <button (click)="calculate()" [disabled]="renteForm.invalid">
+    Opslaan
+  </button>
+  <button (click)="reset()" [disabled]="renteForm.invalid">
+    Reset
+  </button>
+</form>
+<p *ngIf="quotity">Quotiteit: {{quotity}}%</p>
+<p *ngIf="restincome">Restinkomen: {{restincome}}</p>
+<p *ngIf="ratioredemptionincome">Ratio Lasten/Inkomsten: {{ratioredemptionincome}}%</p>
+<p *ngIf="criteria != 0">Aantal kwaliteitscriteria: {{criteria}}</p>
+<h3>Berekende rente:</h3>
+<div *ngIf="tarificationTable">
+<p *ngIf="criteria == 1">{{tarificationTable.Bronze}}</p><p *ngIf="criteria == 2">{{tarificationTable.Silver}}</p><p *ngIf="criteria == 3">{{tarificationTable.Gold}}</p>
+</div>
