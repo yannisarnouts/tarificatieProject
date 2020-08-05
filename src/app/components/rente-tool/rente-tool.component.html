@@ -1,9 +1,3 @@
-<p>rente-tool works!</p>
-<!--<ul>-->
-  <!--<li *ngFor="let client of clients">-->
-    <!--{{client.name}}-->
-  <!--</li>-->
-<!--</ul>-->
 <form [formGroup]="renteForm">
 <div class="form-group">
   <label>Naam A:</label>
@@ -46,5 +40,87 @@
 <p *ngIf="criteria != 0">Aantal kwaliteitscriteria: {{criteria}}</p>
 <h3>Berekende rente:</h3>
 <div *ngIf="tarificationTable">
-<p *ngIf="criteria == 1">{{tarificationTable.Bronze}}</p><p *ngIf="criteria == 2">{{tarificationTable.Silver}}</p><p *ngIf="criteria == 3">{{tarificationTable.Gold}}</p>
+<!--<p *ngIf="criteria == 1">{{tarificationTable.Bronze}}</p><p *ngIf="criteria == 2">{{tarificationTable.Silver}}</p><p *ngIf="criteria == 3">{{tarificationTable.Gold}}</p>-->
+  <p>{{calculatedInterestRate}}</p>
 </div>
+<h3>Gain</h3>
+<table border="1">
+  <th>Summary information</th>
+  <th>Current</th>
+  <th>Offered</th>
+  <tr>
+    <td>OUTSTANDING</td>
+    <td>x</td>
+    <td>x</td>
+  </tr>
+  <tr>
+    <td>annual interest rate</td>
+    <td>x</td>
+    <td>{{calculatedInterestRate}}</td>
+  </tr>
+  <tr>
+    <td>life lan</td>
+    <td>x</td>
+    <td>x</td>
+  </tr>
+  <tr>
+    <td>number of payments per year</td>
+    <td>x</td>
+    <td>x</td>
+  </tr>
+  <tr>
+    <td>total number of payments</td>
+    <td>x</td>
+    <td>x</td>
+  </tr>
+  <tr>
+    <td>payment per period</td>
+    <td>x</td>
+    <td>x</td>
+  </tr>
+  <tr>
+    <td>sum of payments</td>
+    <td>x</td>
+    <td>x</td>
+  </tr>
+  <tr>
+    <td>interest cost</td>
+    <td>x</td>
+    <td>x</td>
+  </tr>
+</table>
+<h3>Cost</h3>
+<table border="1">
+  <th>Summary information</th>
+  <th>Current</th>
+  <th>Offered</th>
+  <tr>
+    <td>Wederbelegging</td>
+    <td>x</td>
+    <td>x</td>
+  </tr>
+  <tr>
+    <td>handlichting</td>
+    <td>x</td>
+    <td>x</td>
+  </tr>
+  <tr>
+    <td>aktekosten</td>
+    <td>x</td>
+    <td>x</td>
+  </tr>
+  <tr>
+    <td><b>total refinancing cost</b></td>
+    <td>x</td>
+    <td>x</td>
+  </tr>
+</table>
+<h3>Profit</h3>
+<table border="1">
+  <th>TOTAL</th>
+  <th>MONTHLY</th>
+  <tr>
+    <td>x</td>
+    <td>x</td>
+  </tr>
+</table>

@@ -13,6 +13,7 @@ export class RenteToolComponent implements OnInit {
   clients: any[] = new Array();
   tarificationTable: TarificationTable;
   quotity: number; restincome: number; ratioredemptionincome: number; criteria: number;
+  calculatedInterestRate: number;
   constructor(private tarificationService: TarificationService, private formBuilder: FormBuilder) {
   }
 
@@ -59,6 +60,13 @@ export class RenteToolComponent implements OnInit {
   getTarificationTable() {
     this.tarificationService.getTable(this.renteForm.get('typeOfLoan').value).subscribe(res => {
       this.tarificationTable =  new TarificationTable(res.data());
+      if (this.criteria === 1) {
+        this.calculatedInterestRate = this.tarificationTable.Bronze;
+      } else if (this.criteria === 2) {
+        this.calculatedInterestRate = this.tarificationTable.Silver;
+      } else if (this.criteria === 3) {
+        this.calculatedInterestRate = this.tarificationTable.Gold;
+      }
     });
   }
 }
